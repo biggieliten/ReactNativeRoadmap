@@ -1,7 +1,6 @@
 import { View, Text, Button } from "react-native";
 import { RootStackTypes } from "../types/types";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { NavigationContainer } from "@react-navigation/native";
 
 const Drawer = createDrawerNavigator<RootStackTypes>();
 
