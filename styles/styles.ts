@@ -15,5 +15,12 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 10,
   },
-  galleryImages: { width: 200, height: 200, margin: 10 },
+  galleryImages: {
+    width: 200,
+    height: 200,
+    margin: 10,
+    // aspectRatio: 1,
+    // flexDirection: "column",
+    // flexWrap: "wrap",
+  },
 });
