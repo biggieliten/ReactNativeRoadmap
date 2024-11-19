@@ -7,6 +7,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { styles } from "./styles/styles";
 import { Test } from "./pages/Test";
 import { HomeScreen } from "./pages/Homescreen";
+import { Tabs } from "./pages/Tabs";
 
 const Stack = createNativeStackNavigator<RootStackTypes>();
 
@@ -18,6 +19,7 @@ function RootStack() {
     >
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Test" component={Test} />
+      <Stack.Screen name="Tabs" component={Tabs} />
     </Stack.Navigator>
   );
 }
