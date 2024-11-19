@@ -4,6 +4,6 @@ export type RootStackTypes = {
   SignIn: undefined;
 };
 
-export type AuthContextType = {
-  isLoggedIn: boolean;
-};
+// export type AuthContextType = {
+//   isLoggedIn: boolean;
+// };
