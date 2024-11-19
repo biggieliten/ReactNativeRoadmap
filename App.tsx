@@ -6,6 +6,7 @@ import { RootStackTypes } from "./types/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { styles } from "./styles/styles";
 import { Test } from "./pages/Test";
+import { Drawer } from "./pages/DrawerScreen";
 
 function HomeScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackTypes>>();
@@ -29,6 +30,7 @@ function RootStack() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Test" component={Test} />
+      <Stack.Screen name="Test" component={Drawer} />
     </Stack.Navigator>
   );
 }
