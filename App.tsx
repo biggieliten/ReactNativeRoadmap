@@ -6,6 +6,7 @@ import { RootStackTypes } from "./types/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { styles } from "./styles/styles";
 import { Test } from "./pages/Test";
+import { SignIn } from "./pages/SignIn";
 
 function HomeScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackTypes>>();
@@ -18,6 +19,12 @@ function HomeScreen() {
       >
         <Text>Test</Text>
       </Pressable>
+      <Pressable
+        style={styles.navigationButton}
+        onPress={() => navigation.navigate("SignIn")}
+      >
+        <Text>SignIn</Text>
+      </Pressable>
     </View>
   );
 }
@@ -28,6 +35,8 @@ function RootStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="SignIn" component={SignIn} />
+
       <Stack.Screen name="Test" component={Test} />
     </Stack.Navigator>
   );
