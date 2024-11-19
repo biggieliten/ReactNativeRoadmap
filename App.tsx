@@ -7,6 +7,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { styles } from "./styles/styles";
 import { Test } from "./pages/Test";
 import { HomeScreen } from "./pages/Homescreen";
+import { Drawer } from "./pages/DrawerScreen";
 
 const Stack = createNativeStackNavigator<RootStackTypes>();
 
