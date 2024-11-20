@@ -1,19 +1,26 @@
 import * as React from "react";
-import { View, Text, Pressable } from "react-native";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { RootStackTypes } from "./types/types";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { styles } from "./styles/styles";
+import {
+  AuthContext,
+  AuthenticationProvider,
+} from "./state/AuthContext/AuthContext"; // Adjust the path as necessary
 import { Test } from "./pages/Test";
 import { HomeScreen } from "./pages/Homescreen";
+import { SignIn } from "./pages/SignIn";
+import { useContext } from "react";
+// import { View, Text } from "react-native";
 import { DrawerScreen } from "./pages/DrawerScreen";
 
 const Stack = createNativeStackNavigator<RootStackTypes>();
 
 function RootStack() {
+  const { userToken } = useContext(AuthContext);
+
   return (
     <Stack.Navigator
+      key={userToken ? "authenticated" : "unauthenticated"}
       screenOptions={{ headerShown: false }}
       initialRouteName="Drawer"
     >
@@ -26,8 +33,10 @@ function RootStack() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <RootStack />
-    </NavigationContainer>
+    <AuthenticationProvider>
+      <NavigationContainer>
+        <RootStack />
+      </NavigationContainer>
+    </AuthenticationProvider>
   );
 }
