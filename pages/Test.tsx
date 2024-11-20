@@ -1,8 +1,11 @@
 import { View, Text } from "react-native";
-export const Test = () => {
+import { Button } from "react-native";
+
+export const Test = ({ navigation }: any) => {
   return (
-    <View>
-      <Text>Test</Text>
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Test Screen</Text>
+      <Button title="Go Back" onPress={() => navigation.goBack()} />
     </View>
   );
 };

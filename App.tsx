@@ -1,24 +1,37 @@
 import * as React from "react";
-import { View, Text, Pressable } from "react-native";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { RootStackTypes } from "./types/types";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { styles } from "./styles/styles";
-import { Test } from "./pages/Test";
-import { HomeScreen } from "./pages/Homescreen";
+import {
+  AuthContext,
+  AuthenticationProvider,
+} from "./state/AuthContext/AuthContext"; // Adjust the path as necessary
+import { SignIn } from "./pages/SignIn";
+import { useContext } from "react";
+// import { View, Text } from "react-native";
+import { DrawerScreen } from "./pages/DrawerScreen";
 import { Tabs } from "./pages/Tabs";
 
 const Stack = createNativeStackNavigator<RootStackTypes>();
 
 function RootStack() {
+  const { userToken } = useContext(AuthContext);
+
   return (
     <Stack.Navigator
+      key={userToken ? "authenticated" : "unauthenticated"}
       screenOptions={{ headerShown: false }}
-      initialRouteName="Home"
+      initialRouteName={userToken ? "Drawer" : "SignIn"} // Dynamisk startpunkt
     >
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Test" component={Test} />
+      {userToken === null ? (
+        <>
+          <Stack.Screen name="SignIn" component={SignIn} />
+        </>
+      ) : (
+        <>
+          <Stack.Screen name="Drawer" component={DrawerScreen} />
+        </>
+      )}
       <Stack.Screen name="Tabs" component={Tabs} />
     </Stack.Navigator>
   );
@@ -26,8 +39,10 @@ function RootStack() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <RootStack />
-    </NavigationContainer>
+    <AuthenticationProvider>
+      <NavigationContainer>
+        <RootStack />
+      </NavigationContainer>
+    </AuthenticationProvider>
   );
 }
