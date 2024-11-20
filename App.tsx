@@ -6,7 +6,6 @@ import {
   AuthContext,
   AuthenticationProvider,
 } from "./state/AuthContext/AuthContext"; // Adjust the path as necessary
-import { Test } from "./pages/Test";
 import { SignIn } from "./pages/SignIn";
 import { useContext } from "react";
 // import { View, Text } from "react-native";
