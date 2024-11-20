@@ -1,28 +1,18 @@
 import { View, Text, Button } from "react-native";
 import { RootStackTypes } from "../types/types";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { HomeScreen } from "./HomeScreen";
+import { Test } from "./Test";
+import { SignOut } from "./SignOut";
 
 const Drawer = createDrawerNavigator<RootStackTypes>();
-
-const HomeScreen = ({ navigation }: any) => (
-  <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-    <Text>Home Screen</Text>
-    <Button title="Open Drawer" onPress={() => navigation.openDrawer()} />
-  </View>
-);
-
-const Test = ({ navigation }: any) => (
-  <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-    <Text>Test Screen</Text>
-    <Button title="Go Back" onPress={() => navigation.goBack()} />
-  </View>
-);
 
 export const DrawerScreen = () => {
   return (
     <Drawer.Navigator initialRouteName="Home">
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Test" component={Test} />
+      <Drawer.Screen name="SignOut" component={SignOut} />
     </Drawer.Navigator>
   );
 };

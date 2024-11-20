@@ -4,6 +4,7 @@ export type RootStackTypes = {
   SignIn: undefined;
   Drawer: undefined;
   LeftDrawer: undefined;
+  SignOut: undefined;
 };
 
 // export type AuthContextType = {

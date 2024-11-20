@@ -6,21 +6,12 @@ import { styles } from "../styles/styles";
 import { useContext } from "react";
 import { AuthContext } from "../state/AuthContext/AuthContext";
 
-export function HomeScreen() {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackTypes>>();
-
+export const HomeScreen = ({ navigation }: any) => {
   const { signOut } = useContext(AuthContext);
-
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Home Screen</Text>
-      <Pressable
-        style={styles.navigationButton}
-        onPress={() => navigation.navigate("Test")}
-      >
-        <Text>Test</Text>
-      </Pressable>
-      <Button title="Sign out" onPress={signOut}></Button>
+      <Button title="Open Drawer" onPress={() => navigation.openDrawer()} />
     </View>
   );
-}
+};
