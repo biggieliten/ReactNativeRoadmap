@@ -22,11 +22,17 @@ function RootStack() {
     <Stack.Navigator
       key={userToken ? "authenticated" : "unauthenticated"}
       screenOptions={{ headerShown: false }}
-      initialRouteName="Drawer"
+      initialRouteName={userToken ? "Drawer" : "SignIn"} // Dynamisk startpunkt
     >
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Test" component={Test} />
-      <Stack.Screen name="Drawer" component={DrawerScreen} />
+      {userToken === null ? (
+        <>
+          <Stack.Screen name="SignIn" component={SignIn} />
+        </>
+      ) : (
+        <>
+          <Stack.Screen name="Drawer" component={DrawerScreen} />
+        </>
+      )}
     </Stack.Navigator>
   );
 }
