@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { RootStackTypes } from "./types/types";
@@ -11,6 +10,7 @@ import { Test } from "./pages/Test";
 import { HomeScreen } from "./pages/Homescreen";
 import { SignIn } from "./pages/SignIn";
 import { useContext } from "react";
+// import { View, Text } from "react-native";
 
 const Stack = createNativeStackNavigator<RootStackTypes>();
 
@@ -18,7 +18,10 @@ function RootStack() {
   const { userToken } = useContext(AuthContext);
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      key={userToken ? "authenticated" : "unauthenticated"}
+      screenOptions={{ headerShown: false }}
+    >
       {userToken === null ? (
         <>
           <Stack.Screen name="SignIn" component={SignIn} />

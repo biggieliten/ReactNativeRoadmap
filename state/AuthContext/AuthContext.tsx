@@ -70,9 +70,8 @@ export const AuthenticationProvider = ({ children }: AuthProps) => {
   const authContext = useMemo(
     () => ({
       signIn: async (data: any) => {
-        console.log("Before SignIn:", state.userToken);
-        dispatch({ type: "SIGN_IN", token: "dummy-auth" });
-        console.log("After SignIn:", state.userToken);
+        const token = "dummy-auth";
+        dispatch({ type: "SIGN_IN", token: token });
       },
       signOut: () =>
         dispatch({
