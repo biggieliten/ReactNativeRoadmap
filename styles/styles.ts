@@ -23,4 +23,14 @@ export const styles = StyleSheet.create({
     // flexDirection: "column",
     // flexWrap: "wrap",
   },
+  contactCard: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+
+    width: "100%",
+    height: 70,
+    borderColor: "black",
+    borderWidth: 1,
+  },
 });
