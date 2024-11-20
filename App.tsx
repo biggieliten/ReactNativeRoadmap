@@ -10,7 +10,6 @@ import { SignIn } from "./pages/SignIn";
 import { useContext } from "react";
 // import { View, Text } from "react-native";
 import { DrawerScreen } from "./pages/DrawerScreen";
-import { Tabs } from "./pages/Tabs";
 
 const Stack = createNativeStackNavigator<RootStackTypes>();
 
@@ -32,7 +31,6 @@ function RootStack() {
           <Stack.Screen name="Drawer" component={DrawerScreen} />
         </>
       )}
-      <Stack.Screen name="Tabs" component={Tabs} />
     </Stack.Navigator>
   );
 }
