@@ -12,7 +12,7 @@ export const Tabs = () => {
         initialRouteName="Gallery"
         options={{}}
         screenOptions={{
-          tabBarStyle: { paddingTop: 30, backgroundColor: "#4c4c4d" },
+          tabBarStyle: { backgroundColor: "#4c4c4d" },
           tabBarLabelStyle: { color: "white" },
         }}
       >
