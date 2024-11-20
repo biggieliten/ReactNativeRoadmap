@@ -33,8 +33,9 @@ export const Gallery = () => {
         }}
       >
         {/* <View> */}
-        {mountains.map((mountain) => (
+        {mountains.map((mountain, index) => (
           <View
+            key={index}
             style={{
               width: 200,
               height: 200,
