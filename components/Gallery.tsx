@@ -20,7 +20,7 @@ const mountains = [
 
 export const Gallery = () => {
   return (
-    <ScrollView style={{}}>
+    <ScrollView style={{ backgroundColor: "#2d2d2e" }}>
       <View
         style={{
           flexDirection: "row",
@@ -41,6 +41,7 @@ export const Gallery = () => {
               flexBasis: "49%",
               flexGrow: 1,
               margin: 1,
+              marginBottom: 10,
             }}
           >
             <Image

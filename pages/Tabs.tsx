@@ -2,7 +2,6 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { Gallery } from "../components/Gallery";
 import { Contacts } from "../components/Contacts";
 import { SafeAreaView } from "react-native";
-import { GrGallery } from "react-icons/gr";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -12,7 +11,10 @@ export const Tabs = () => {
       <Tab.Navigator
         initialRouteName="Gallery"
         options={{}}
-        screenOptions={{ tabBarStyle: { paddingTop: 30 } }}
+        screenOptions={{
+          tabBarStyle: { paddingTop: 30, backgroundColor: "#4c4c4d" },
+          tabBarLabelStyle: { color: "white" },
+        }}
       >
         <Tab.Screen name="Gallery" component={Gallery} />
         <Tab.Screen name="Contacts" component={Contacts} />

@@ -28,9 +28,32 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
 
+    backgroundColor: "#4c4c4d",
+    borderRadius: 10,
+
     width: "100%",
     height: 70,
-    borderColor: "black",
-    borderWidth: 1,
+    marginTop: 10,
+  },
+  contactIcons: {
+    margin: 10,
+    width: 45,
+    height: 45,
+    alignContent: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#1374e9",
+    borderRadius: 100,
+  },
+  phoneLabel: {
+    fontSize: 20,
+    color: "white",
+    flex: 1,
+  },
+  phoneNumber: {
+    fontSize: 20,
+    color: "white",
+    flex: 1,
+    marginRight: 30,
   },
 });
