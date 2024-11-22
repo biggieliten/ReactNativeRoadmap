@@ -4,7 +4,7 @@ import {
   DrawerItem,
   DrawerItemList,
 } from "@react-navigation/drawer";
-import { HomeScreen } from "./Homescreen";
+import { HomeScreen } from "./HomeScreen";
 import { Test } from "./Test";
 import { useContext } from "react";
 import { AuthContext } from "../state/AuthContext/AuthContext";
