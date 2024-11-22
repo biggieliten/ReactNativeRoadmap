@@ -18,7 +18,6 @@ export const Tabs = () => {
       >
         <Tab.Screen name="Gallery" component={Gallery} />
         <Tab.Screen name="Contacts" component={Contacts} />
-        {/* <Tab.Screen name="Gallery" component={Gallery} /> */}
       </Tab.Navigator>
     </SafeAreaView>
   );

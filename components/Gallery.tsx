@@ -25,14 +25,8 @@ export const Gallery = () => {
         style={{
           flexDirection: "row",
           flexWrap: "wrap",
-          // minWidth: "100%",
-          // width: "100%",
-          // height: 5000,
-          // borderBlockColor: "pink",
-          // borderWidth: 3,
         }}
       >
-        {/* <View> */}
         {mountains.map((mountain, index) => (
           <View
             key={index}
@@ -51,7 +45,6 @@ export const Gallery = () => {
             ></Image>
           </View>
         ))}
-        {/* </View> */}
       </View>
     </ScrollView>
   );

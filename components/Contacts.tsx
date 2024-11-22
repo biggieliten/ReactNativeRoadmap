@@ -288,7 +288,6 @@ export const Contacts = () => {
             backgroundColor: "#2d2d2e",
           }}
           animationType="slide"
-          // transparent={""}
           visible={modalVisible}
           onRequestClose={() => setModalVisible(false)}
         >
